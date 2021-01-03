@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz');
+@import url('https://fonts.googleapis.com/css?family=Caladea:700i&display=swap');
+
+* {
+    box-sizing: border-box;
+    background: #fff;
+    -webkit-background-clip: text;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Ubuntu';
+  }
+  h2 {
+    font-family: 'Ubuntu';
+    font-size: 30px;
+    color: #ffffff;
+    font-style: normal;
+  }
+
+  .form3 {
+    margin-top: 70px;
+    /*margin-right: 500px;
+    margin-left: 550px;*/
+    
+    padding: 20px 30px;
+    display: block;
+    text-align: center;
+    box-shadow:0px 0 20px -10px #000;
+    width: 440px;
+    height: 600px;
+    background: #3d6698;
+    background: #59ABE3;
+    border-radius: 10px;
+    margin:calc(50vh - 220px) auto;
+    max-width:calc(100vw - 40px);
+    transition:all .3s
+  }
+
+  .btn{
+    background: #5892da;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'Ubuntu';
+    cursor: pointer;
+      width: 140px;
+    height: 40px;
+    border-radius: 5px;
+    border-style: none;
+    text-anchor: start;
+  }
+  .btn:hover{
+    background: #689cdd;
+    
+  }
+
+  .edittext{
+    width: 280px;
+    height: 40px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    border: none;
+    text-anchor: start;
+    box-sizing: border-box;
+    padding: 15px 15px;
+  }
+
+  .edittext1{
+    width: 280px;
+    height: 45px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    border: none;
+    text-anchor: start;
+    box-sizing: border-box;
+    padding: 15px 15px;
+  }
+
+  /*------------------------pie---------------------------*/
+
+.footer {
+  background: #778899 ;
+  color: #ffffff;
+  text-align: center;
+  font-size: 15px;
+  padding: 20px;
+  margin-bottom: 0px;
+  width: 100%;
+}
+.copy{
+  background: #778899;
+}
