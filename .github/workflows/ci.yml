@@ -47,7 +47,7 @@ jobs:
       # Este paso de 'upload-artifact' lo sube a la interfaz de GitHub para que lo puedas descargar.
       - name: Subir reporte de pruebas (opcional)
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Reporte de PHPUnit
           path: junit.xml
