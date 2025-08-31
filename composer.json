@@ -1,5 +1,5 @@
 {
-    "name": "prueba",
+    "name": "factura/epicventures",
     "description": "Una breve descripción de tu proyecto PHP.",
     "require": {
         "php": ">=8.0"
@@ -10,6 +10,11 @@
     "autoload": {
         "psr-4": {
             "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
         }
     }
 }
