@@ -5,9 +5,8 @@
          colors="true"
 >
     <testsuites>
-    <testsuite name="Application">
-        <file>./Prueba.php</file>
-    </testsuite>
-</testsuites>
+        <testsuite name="Application">
+            <directory>.</directory>
+        </testsuite>
     </testsuites>
 </phpunit>
