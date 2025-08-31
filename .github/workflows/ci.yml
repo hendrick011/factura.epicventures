@@ -1,5 +1,5 @@
 # Nombre del flujo de trabajo que verás en GitHub
-name: Flujo de CI con PHP - Calidad Software
+name: Flujo de CI con PHP - Calidad de Software
 
 # El evento que disparará el pipeline
 # Se activará cada vez que alguien suba código (push) a la rama 'main'
