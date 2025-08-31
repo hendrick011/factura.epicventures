@@ -1,5 +1,7 @@
 <?php declare(strict_types=1);
 
+namespace App\Tests; // Puedes usar un namespace como este
+
 use PHPUnit\Framework\TestCase;
 
 final class Prueba extends TestCase
