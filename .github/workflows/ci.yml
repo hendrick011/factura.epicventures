@@ -1,0 +1,59 @@
+# Nombre del flujo de trabajo que verás en GitHub
+name: Flujo de CI con PHP
+
+# El evento que disparará el pipeline
+# Se activará cada vez que alguien suba código (push) a la rama 'main'
+on:
+  push:
+    branches: [ main ]
+
+# Aquí se definen los "trabajos" o las tareas a realizar
+jobs:
+  # El nombre de nuestro trabajo es 'build_and_test'
+  build_and_test:
+    # Indica el sistema operativo en el que se ejecutará el trabajo
+    runs-on: ubuntu-latest
+
+    # Los pasos que conforman el trabajo
+    steps:
+      # Paso 1: Clonación del Repositorio
+      # Esta acción descarga tu código del repositorio a la máquina de GitHub Actions
+      - name: Checkout del código
+        uses: actions/checkout@v3
+
+      # Paso 2: Configuración de PHP
+      # Prepara el entorno para que pueda ejecutar código PHP
+      - name: Configurar PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'  # Puedes cambiar la versión de PHP si lo necesitas
+          extensions: mbstring, pdo, curl
+          tools: composer
+
+      # Paso 3: Instalación de dependencias
+      # Instala las librerías necesarias para que tu proyecto y pruebas funcionen
+      - name: Instalar dependencias con Composer
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      # Paso 4: Ejecución de Pruebas Automatizadas
+      # Aquí es donde el robot ejecuta tus pruebas. Usaremos PHPUnit, la herramienta estándar para PHP
+      - name: Ejecutar pruebas unitarias con PHPUnit
+        run: ./vendor/bin/phpunit
+
+      # Paso 5: Generación de Reportes de Resultados
+      # Aunque PHPUnit ya te muestra los resultados en la consola, puedes crear un reporte XML.
+      # Para hacer esto, tu comando de PHPUnit debe estar configurado para generar un archivo
+      # Por ejemplo: ./vendor/bin/phpunit --log-junit report.xml
+      # Este paso de 'upload-artifact' lo sube a la interfaz de GitHub para que lo puedas descargar.
+      - name: Subir reporte de pruebas (opcional)
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: Reporte de PHPUnit
+          path: junit.xml
+
+      # Paso 6: Envío de Notificaciones
+      # Si las pruebas fallan, puedes recibir una notificación por Slack, por ejemplo.
+      # Este paso usa una acción de terceros para enviar un mensaje
+      # El "if: failure()" asegura que solo se ejecute si el paso anterior falló
+     
